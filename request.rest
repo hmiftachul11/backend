@@ -1,0 +1,26 @@
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/1
+###
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Tachul",
+    "email": "tachul@gmail.com",
+    "gender": "Male"
+}
+
+###
+PATCH   http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+    "name": "Huda",
+    "email": "huda@gmail.com",
+    "gender": "Male"
+}
+
+###
+DELETE http://localhost:3000/users/2
