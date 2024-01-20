@@ -8,18 +8,18 @@ app.use(cors());
 app.use(express.json());
 app.use(UserRoute);
 
-// Sync the database and log SQL queries
 (async () => {
     await db.sync({ alter: true });
     console.log('Database synchronized successfully.');
 
-    // Log SQL queries
     db.options.logging = (query, timing) => {
         console.log('Executing:', query);
     };
 
-    app.listen(3000, () => {
-        console.log('Server is running on port 3000');
+    const PORT = 8000; 
+
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
         console.log('Server up and running...');
     });
 })();
